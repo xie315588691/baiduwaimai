@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+
+
+    </style>
+    <script>
+        (function setSize() {
+            // alert(document.documentElement.clientWidth / 16)
+            var _html = document.getElementsByTagName('html')[0];
+            var ch = document.documentElement.clientWidth;
+
+            ch > 640 ? _html.style.fontSize = '100px' : _html.style.fontSize = ch * 10 / 64 + 'px';
+            window.onresize = setSize;
+        })();
+    </script>
+</head>
+<body>
+<div class="baidu">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide waimaiPage1">
+                <div class="page1-title">
+                    <h3>生活中,</h3>
+                    <p>经常有这种时候...</p>
+                </div>
+                <!--                球-->
+                <div class="page1-sphere">
+                    <img src="./images/page2/sphere1.png" alt="">
+                </div>
+                <div class="page1-bear"></div>
+                <!--                page1-scroll1轮播图1--->
+                <div class="page1-scroll1" style="display: none">
+                    <div class="scroll1-bg"></div>
+                    <div class="scroll1-person">
+                        <div class="scroll1-files">
+                            <div class="scroll1-file1"></div>
+                            <div class="scroll1-file2"></div>
+                        </div>
+                    </div>
+                    <div class="scroll1-message">
+                        <div class="scroll1-msg-info">
+                        </div>
+                    </div>
+                </div>
+                <!--                page2-scroll2轮播图1--->
+                <div class="page1-scroll2">
+                    <div class="scroll2-bg"></div>
+                    <div class="scroll2-person">
+                        <div class="scroll2-person-leg1"></div>
+                        <div class="scroll2-person-leg2"></div>
+                    </div>
+                    <div class="scroll2-message">
+                        <div class="scroll2-msg-info">
+                        </div>
+                    </div>
+
+                </div>
+                <!--                page3-scroll3轮播图1--->
+                <div class="page1-scroll3"></div>
+
+            </div>
+
+            <div class="swiper-slide waimaiPage2">Slide 2</div>
+            <div class="swiper-slide waimaiPage3">Slide 3</div>
+            <div class="swiper-slide waimaiPage4">Slide 4</div>
+            <div class="swiper-slide waimaiPage5">Slide 5</div>
+            <div class="swiper-slide waimaiPage6">Slide 6</div>
+            <div class="swiper-slide waimaiPage7">Slide 7</div>
+        </div>
+    </div>
+    <!--    登陆页-->
+    <div class="baiduLoading" style="display: none">
+        <div class="load-rider">
+            <img src="./images/loading/rider1_.png" alt="">
+        </div>
+        <div class="load-progress">
+        </div>
+        <div class="load-text">
+            <img src="./images/loading/loading-txt.png" alt="">
+        </div>
+        <div class="load-copyright">
+            <img src="./images/loading/waimai-logo.png" alt="">
+            <p>@ 2019 XiaoXin WaiMai Produced</p>
+        </div>
+
+
+    </div>
+    <!--    欢迎页-->
+    <div class="baiduWelcome" style="display: none">
+        <div class="wel-title">
+            <img src="./images/page1/theme-title.png" alt="">
+            <img src="./images/page1/hello.png" alt="">
+        </div>
+        <div class="wel-grass">
+            <img src="./images/page1/grass1.png" alt="">
+            <img src="./images/page1/trees.png" alt="">
+            <img src="./images/page1/grass2.png" alt="">
+        </div>
+        <div class="wel-rider">
+            <img src="./images/page1/rider2.png" alt="">
+            <img src="./images/page1/jet1.png" alt="">
+        </div>
+        <div class="wel-bear">
+            <div class="wel-bear-circle">
+                <img src="./images/page1/circle1.png" alt="">
+                <img src="./images/page1/circle2.png" alt="">
+            </div>
+            <div class="wel-bear-btn">
+                <img src="./images/page1/bear-btn-pre.png" alt="">
+            </div>
+        </div>
+        <div class="wel-fontText">
+            <p>长按启动，观外卖之路</p>
+        </div>
+
+    </div>
+</div>
+
+<script src="./lib/swiper/dist/js/swiper.min.js"></script>
+<script src="./lib/zepto/dist/zepto.min.js"></script>
+<script src="./lib/zepto/dist/fx.js"></script>
+<script src="./lib/zepto/dist/fx_methods.js"></script>
+<script src="./lib/zepto/dist/touch.js"></script>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical'
+    })
+    $('.baiduWelcome').click(function () {
+        $(this).fadeOut();
+    })
+    $(function () {
+        setTimeout(function () {
+            $('.baiduLoading').addClass('animate')
+            $('.load-rider').on('animationend', function () {
+                $('.baiduLoading').fadeOut();
+            })
+        }, 1000)
+    })
+
+</script>
+</body>
+</html>

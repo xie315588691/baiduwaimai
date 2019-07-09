@@ -1,0 +1,527 @@
+@charset "utf-8";
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+}
+
+/*容器盒子*/
+.baidu {
+    max-width: 640px;
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.swiper-slide {
+    box-sizing: border-box;
+}
+
+.baiduLoading, .baiduWelcome {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*登陆页*/
+.baiduLoading {
+    background-color: #FFECE9;
+    z-index: 3;
+
+}
+
+.load-rider, .load-rider img {
+    width: 1.54rem;
+    height: 1.21rem;
+}
+
+.load-rider {
+    margin-top: 2.23rem;
+    transform: translate(4.3rem);
+}
+
+.load-progress {
+    width: 4.16rem;
+    height: 0.2rem;
+    border: 0.02rem solid #373838;
+    border-radius: 0.11rem;
+    margin: 0.05rem auto 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.load-progress::after {
+    content: '';
+    display: block;
+    width: 4.16rem;
+    height: 0.2rem;
+    border-radius: 0.1rem;
+    background-color: #fc2e4d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(80%);
+}
+
+.load-text, .load-text img {
+    width: 2.2rem;
+    height: 0.28rem;
+}
+
+.load-text {
+    margin: 0.4rem auto 0;
+}
+
+.load-copyright {
+    width: 3.94rem;
+    height: 0.71rem;
+    text-align: center;
+    font-size: 0.24rem;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-1.97rem);
+}
+
+.load-copyright img {
+    width: 1.62rem;
+    height: 0.39rem;
+}
+
+.load-copyright p {
+    font-size: 0.24rem;
+    display: block;
+    margin-top: 0.05rem;
+}
+
+.baiduLoading.animate .load-progress::after {
+    animation: loadProgress 2s linear forwards;
+}
+
+/*进度条动画*/
+@keyframes loadProgress {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.baiduLoading.animate .load-rider {
+    animation: loadRider 2s linear forwards;
+}
+
+/*熊开车动画*/
+@keyframes loadRider {
+    10% {
+        transform: translate(4.08rem, -0.1rem);
+    }
+    20% {
+        transform: translate(3.76rem, 0rem);
+    }
+    30% {
+        transform: translate(3.44rem, -0.1rem);
+    }
+    40% {
+        transform: translate(3.02rem, 0rem);
+    }
+    50% {
+        transform: translate(2.7rem, -0.1rem);
+    }
+    60% {
+        transform: translate(2.38rem, 0rem);
+    }
+    70% {
+        transform: translate(2.06rem, -0.1rem);
+    }
+    80% {
+        transform: translate(1.74rem, 0rem);
+    }
+    90% {
+        transform: translate(1.42rem, -0.1rem);
+    }
+    to {
+
+        transform: translate(1.1rem);
+    }
+}
+
+/*欢迎页*/
+.baiduWelcome {
+    background-color: deepskyblue;
+    z-index: 2;
+    overflow: hidden;
+    /*position: relative;*/
+}
+
+.baiduWelcome::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/page1/clouds.png") center/6.4rem 6.73rem no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(1.1rem);
+    z-index: -1;
+}
+
+.wel-title, .wel-title img:first-child {
+    width: 3.97rem;
+    height: 2.44rem;
+}
+
+.wel-title {
+    margin: 0.42rem auto 0;
+    position: relative;
+}
+
+.wel-title img:last-child {
+    width: 0.7rem;
+    height: 0.75rem;
+    position: absolute;
+    top: 0.2rem;
+    right: 0.08rem;
+}
+
+/*草地*/
+.wel-grass {
+    width: 6.4rem;
+    height: 3.96rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}
+
+.wel-grass img:first-child {
+    width: 6.4rem;
+    height: 3.96rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wel-grass img:nth-child(2) {
+    width: 5.99rem;
+    height: 0.71rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-3rem);
+}
+
+.wel-grass img:last-child {
+    width: 6.4rem;
+    height: 2.28rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*骑手*/
+.wel-rider {
+    width: 1.67rem;
+    height: 2.79rem;
+    position: absolute;
+    left: 50%;
+    bottom: 3.46rem;
+    transform: translateX(-0.84rem);
+}
+
+.wel-rider img:first-child {
+    width: 1.67rem;
+    height: 2.79rem;
+
+}
+
+.wel-rider img:last-child {
+    width: 1.14rem;
+    height: 0.26rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-0.57rem);
+}
+
+/*按钮*/
+.wel-bear {
+    width: 2.08rem;
+    height: 2.08rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0.86rem;
+    transform: translateX(-1.04rem);
+}
+
+.wel-bear-circle, .wel-bear-circle img {
+    width: 2.08rem;
+    height: 2.08rem;
+}
+
+.wel-bear-circle img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: circle 0.75s linear infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.wel-bear-btn, .wel-bear-btn img {
+    width: 1.01rem;
+    height: 0.97rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0.5rem, -0.49rem);
+}
+
+/*底部字体*/
+.wel-fontText {
+    font-size: 0.32rem;
+    position: absolute;
+    left: 0;
+    bottom: 0.38rem;
+    width: 100%;
+    text-align: center;
+}
+
+/*page1*/
+.waimaiPage1 {
+    background-color: #BE8452;
+}
+
+.page1-title {
+    position: absolute;
+    left: 0.47rem;
+    top: 0.32rem;
+    color: #fff;
+}
+
+.page1-title::after {
+    content: '';
+    display: block;
+    width: 0.05rem;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: -0.15rem;
+}
+
+.page1-title h3 {
+    font-size: 0.64rem;
+}
+
+.page1-title p {
+    font-size: 0.24rem;
+}
+
+/*球*/
+.page1-sphere, .page1-sphere img {
+    width: 6.4rem;
+    height: 3.56rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/*bear*/
+.page1-bear {
+    width: 1.78rem;
+    height: 1.34rem;
+    background: url('../images/page2/bear1.png') no-repeat center/1.78rem 1.34rem;
+    position: absolute;
+    bottom: 0;
+    right: 0.38rem;
+    z-index: 2;
+}
+
+/*scroll1*/
+.scroll1-bg {
+    width: 5.76rem;
+    height: 5.73rem;
+    background: url("../images/page2/bg1.png") center/5.76rem 5.73rem no-repeat;
+    position: absolute;
+    bottom: 2.52rem;
+    left: 50%;
+    transform: translateX(-2.88rem);
+
+}
+
+.scroll1-person {
+    width: 4.39em;
+    height: 3.49rem;
+    background: url('../images/page2/front1.png') center/4.39rem 3.49rem no-repeat;
+    position: absolute;
+    bottom: 2.9rem;
+    left: 50%;
+    transform: translateX(-2.20rem);
+    z-index: 2;
+}
+
+/*文件*/
+.scroll1-files {
+    width: 0.85rem;
+    height: 0.5rem;
+    background: url("../images/page2/papers.png") bottom right/1.15rem 1.14rem no-repeat;
+    position: absolute;
+    bottom: 1.04rem;
+    left: 0.27rem;
+}
+
+.scroll1-file1 {
+    width: 0.64rem;
+    height: 0.2rem;
+    background: url("../images/page2/papers.png") -0.45rem 0/1.15rem 1.14rem no-repeat;
+    position: absolute;
+    top: -0.8rem;
+    left: 0;
+}
+
+.scroll1-file2 {
+    width: 0.86rem;
+    height: 0.26rem;
+    background: url("../images/page2/papers.png") 0 -0.32rem/1.15rem 1.14rem no-repeat;
+    position: absolute;
+    top: -0.45rem;
+    left: -0.7rem;
+}
+
+.scroll1-message {
+    width: 3.63rem;
+    height: 1.19rem;
+    background: url("../images/page2/txt-bubbl.png") 0 0/3.63rem 1.19rem no-repeat;
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    z-index: 2;
+}
+
+.scroll1-msg-info {
+    width: 2.2rem;
+    height: 0.3rem;
+    background: url("../images/page2/txt-work.png") center/2.2rem 0.3rem no-repeat;
+    margin: 0.44rem auto;
+}
+
+/*scroll2*/
+.scroll2-bg {
+    width: 5.82rem;
+    height: 5.2rem;
+    background: url("../images/page2/bg2.png") center/5.82rem 5.2rem no-repeat;
+    position: absolute;
+    bottom: 2.80rem;
+    left: 50%;
+    transform: translateX(-2.91rem);
+}
+
+.scroll2-person {
+    width: 4.36em;
+    height: 3.32rem;
+    background: url('../images/page2/relax.png') center/4.36rem 3.32rem no-repeat;
+    position: absolute;
+    bottom: 2.7rem;
+    left: 50%;
+    transform: translateX(-2.18rem);
+    z-index: 2;
+}
+
+.scroll2-person-leg1 {
+    width: 1.13rem;
+    height: 0.24rem;
+    background: url("../images/page2/leg1.png") center/1.13rem 0.24rem no-repeat;
+    position: absolute;
+    left: 1.95rem;
+    bottom: 1.1rem;
+}
+
+.scroll2-person-leg2 {
+    width: 0.85rem;
+    height: 0.71rem;
+    background: url("../images/page2/leg2.png") center/0.85rem 0.71rem no-repeat;
+    position: absolute;
+    left: 1.93rem;
+    bottom: 1.2rem;
+}
+.scroll2-message {
+    width: 3.63rem;
+    height: 1.19rem;
+    background: url("../images/page2/txt-bubbl.png") 0 0/3.63rem 1.19rem no-repeat;
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    z-index: 2;
+}
+
+.scroll2-msg-info {
+    width: 2.2rem;
+    height: 0.3rem;
+    background: url("../images/page2/txt-life.png") center/2.2rem 0.3rem no-repeat;
+    margin: 0.44rem auto;
+}
+
+/*page2*/
+.waimaiPage2 {
+    background-color: #EF4143;
+}
+
+
+/*page3*/
+.waimaiPage3 {
+    background-color: #DD8903;
+}
+
+/*page4*/
+.waimaiPage4 {
+    background-color: #40A000;
+}
+
+/*page5*/
+.waimaiPage5 {
+    background-color: #0097D0;
+}
+
+/*page6*/
+.waimaiPage6 {
+    background-color: #B626A1;
+}
+
+/*page7*/
+.waimaiPage7 {
+    background-color: #1A062B;
+}
