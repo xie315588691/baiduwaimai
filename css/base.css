@@ -478,6 +478,7 @@ html, body {
     left: 1.93rem;
     bottom: 1.2rem;
 }
+
 .scroll2-message {
     width: 3.63rem;
     height: 1.19rem;
@@ -495,11 +496,113 @@ html, body {
     margin: 0.44rem auto;
 }
 
-/*page2*/
-.waimaiPage2 {
-    background-color: #EF4143;
+.scroll3-bg {
+    width: 5.61rem;
+    height: 5.16rem;
+    background: url("../images/page2/bg3.png") center/5.61rem 5.16rem no-repeat;
+    position: absolute;
+    bottom: 2.70rem;
+    left: 50%;
+    transform: translateX(-2.80rem);
 }
 
+.scroll3-person {
+    width: 5.03rem;
+    height: 2.29rem;
+    background: url("../images/page2/person.png") center /5.03rem 2.29rem no-repeat;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-2.52rem);
+    z-index: 2;
+}
+
+.scroll3-word1 {
+    width: 0.92rem;
+    height: 0.83rem;
+    background: url("../images/page2/word1.png") center /0.92rem 0.83rem no-repeat;
+    position: absolute;
+    bottom: 1.94rem;
+    left: -0.07rem;
+}
+
+.scroll3-word2 {
+    width: 0.77rem;
+    height: 0.7rem;
+    background: url("../images/page2/word2.png") center/0.77rem 0.7rem no-repeat;
+    position: absolute;
+    bottom: 2.45rem;
+    left: 1.15rem;
+
+}
+
+
+.scroll3-word3 {
+    width: 1.15rem;
+    height: 1.04rem;
+    background: url("../images/page2/word3.png") center/1.15rem 1.04rem no-repeat;
+    position: absolute;
+    bottom: 2.2rem;
+    right: 1.3rem;
+}
+
+.scroll3-word4 {
+    width: 0.79rem;
+    height: 0.73rem;
+    background: url("../images/page2/word4.png") center/0.79rem 0.73rem no-repeat;
+    position: absolute;
+    bottom: 2.3rem;
+    right: 0.12rem;
+}
+
+.scroll3-message {
+    width: 3.63rem;
+    height: 1.19rem;
+    background: url("../images/page2/txt-bubbl.png") 0 0/3.63rem 1.19rem no-repeat;
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    z-index: 2;
+}
+
+.scroll3-msg-info {
+    width: 2.2rem;
+    height: 0.3rem;
+    background: url("../images/page2/txt-res.png") center/2.2rem 0.3rem no-repeat;
+    margin: 0.44rem auto;
+}
+
+
+/*page2*/
+.waimaiPage2 {
+    background-color: #EE4143;
+}
+
+.page2-title {
+    position: absolute;
+    left: 0.47rem;
+    top: 0.32rem;
+    color: #fff;
+}
+
+.page2-title::after {
+    content: '';
+    display: block;
+    width: 0.05rem;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: -0.15rem;
+}
+
+.page2-title h3 {
+    font-size: 0.64rem;
+}
+
+.page2-title p {
+    font-size: 0.24rem;
+}
 
 /*page3*/
 .waimaiPage3 {
