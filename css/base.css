@@ -781,6 +781,8 @@ html, body {
     position: absolute;
     left: 1.93rem;
     bottom: 1.2rem;
+    transform-origin: left top;
+    transform: rotateZ(20deg);
 }
 
 .scroll2-message {
@@ -906,7 +908,15 @@ html, body {
 .animate .scroll2-bg {
     animation: page1Retote 1.5s 2.5s;
 }
+.animate .scroll2-person-leg2{
+    animation: page1Leg 0.8s 3s forwards;
+}
 
+@keyframes page1Leg {
+    to{
+        transform: none;
+    }
+}
 .animate .scroll2-person {
     animation: page1Retote 1.5s 2.8s;
 }
