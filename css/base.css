@@ -576,7 +576,7 @@ html, body {
 }
 
 @keyframes pageLine {
-    from{
+    from {
         height: 0;
     }
     to {
@@ -606,6 +606,7 @@ html, body {
     z-index: 2;
 }
 
+
 /*scroll1*/
 .scroll1-bg {
     width: 5.76rem;
@@ -614,9 +615,9 @@ html, body {
     position: absolute;
     bottom: 2.52rem;
     left: 50%;
-    transform: translateX(-2.88rem);
-
+    margin-left: -2.28rem;
 }
+
 
 .scroll1-person {
     width: 4.39em;
@@ -625,7 +626,7 @@ html, body {
     position: absolute;
     bottom: 2.9rem;
     left: 50%;
-    transform: translateX(-2.20rem);
+    margin-left: -2.2rem;
     z-index: 2;
 }
 
@@ -657,6 +658,21 @@ html, body {
     left: -0.7rem;
 }
 
+.animate .scroll1-file2, .animate .scroll1-file1 {
+    animation: Page1filesMove 0.5s infinite;
+}
+
+/*file动画*/
+@keyframes Page1filesMove {
+    from {
+        transform: translateX(10%);
+    }
+    to {
+        transform: translateX(-10%);
+    }
+}
+
+
 .scroll1-message {
     width: 3.63rem;
     height: 1.19rem;
@@ -674,6 +690,59 @@ html, body {
     margin: 0.44rem auto;
 }
 
+.scroll1-message {
+    opacity: 0;
+    transform-origin: right bottom;
+}
+
+.animate .scroll1-message {
+    animation: page1Retote 1.5s 0.8s forwards;
+}
+
+.scroll1-bg, .scroll1-person {
+    opacity: 0;
+    transform-origin: 50% 200%;
+}
+
+
+/*scroll1动画*/
+.animate .scroll1-bg {
+    animation: page1Retote 1.5s forwards;
+}
+
+.animate .scroll1-person {
+    animation: page1Retote 1.5s 0.5s forwards;
+}
+
+
+@keyframes page1Retote {
+    0% {
+        transform: rotateZ(90deg);
+    }
+    25% {
+        transform: rotateZ(-5deg);
+        opacity: 1;
+    }
+    35% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+    60% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+    70% {
+        transform: rotateZ(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateZ(-90deg);
+        opacity: 0;
+    }
+
+}
+
+
 /*scroll2*/
 .scroll2-bg {
     width: 5.82rem;
@@ -682,7 +751,7 @@ html, body {
     position: absolute;
     bottom: 2.80rem;
     left: 50%;
-    transform: translateX(-2.91rem);
+    margin-left: -2.91rem;
 }
 
 .scroll2-person {
@@ -692,7 +761,7 @@ html, body {
     position: absolute;
     bottom: 2.7rem;
     left: 50%;
-    transform: translateX(-2.18rem);
+    margin-left: -2.18rem;
     z-index: 2;
 }
 
@@ -738,7 +807,7 @@ html, body {
     position: absolute;
     bottom: 2.70rem;
     left: 50%;
-    transform: translateX(-2.80rem);
+    margin-left: -2.8rem;
 }
 
 .scroll3-person {
@@ -748,7 +817,7 @@ html, body {
     position: absolute;
     bottom: 3rem;
     left: 50%;
-    transform: translateX(-2.52rem);
+    margin-left: -2.53rem;
     z-index: 2;
 }
 
@@ -781,6 +850,10 @@ html, body {
     right: 1.3rem;
 }
 
+.animate .scroll3-word1 {
+    animation: shake 0.5s infinite;
+}
+
 .scroll3-word4 {
     width: 0.79rem;
     height: 0.73rem;
@@ -805,6 +878,76 @@ html, body {
     height: 0.3rem;
     background: url("../images/page2/txt-res.png") center/2.2rem 0.3rem no-repeat;
     margin: 0.44rem auto;
+}
+
+.scroll2-message, .scroll3-message {
+    opacity: 0;
+    transform-origin: right bottom;
+}
+
+/*page1第3副抖动*/
+.animate .scroll3-word1,
+.animate .scroll3-word2,
+.animate .scroll3-word3,
+.animate .scroll3-word4 {
+    animation: shake 0.5s infinite;
+}
+
+/*page1 第二副 消息动画*/
+.animate .scroll2-message {
+    animation: page1Retote 1.5s 2.8s forwards;
+}
+
+.scroll2-bg, .scroll2-person, .scroll3-bg, .scroll3-person {
+    opacity: 0;
+    transform-origin: 50% 200%;
+}
+
+.animate .scroll2-bg {
+    animation: page1Retote 1.5s 2.5s;
+}
+
+.animate .scroll2-person {
+    animation: page1Retote 1.5s 2.8s;
+}
+
+.animate .scroll3-bg {
+    animation: page1Scroll3 1.5s 4.5s forwards;
+}
+
+.animate .scroll3-person {
+    animation: page1Scroll3 1.5s 4.8s forwards;
+}
+
+.animate .scroll3-message {
+    animation: page1Scroll3 1.5s 4.8s forwards;
+}
+
+
+@keyframes page1Scroll3 {
+    0% {
+        transform: rotateZ(90deg);
+    }
+    25% {
+        transform: rotateZ(-5deg);
+        opacity: 1;
+    }
+    35% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+    60% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+    70% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateZ(0);
+        opacity: 1;
+    }
 }
 
 
@@ -1467,3 +1610,23 @@ html, body {
     color: #b579d6;
 }
 
+
+/*抖动动画*/
+@keyframes shake {
+    from {
+        transform: translate(2%, 0);
+    }
+    25% {
+        transform: translate(0, 2%);
+    }
+    50% {
+        transform: translate(2%, 0);
+    }
+    75% {
+        transform: translate(0, 2%);
+    }
+    100% {
+        transform: translate(2%, 0);
+    }
+
+}

@@ -12,7 +12,6 @@
     </style>
     <script>
         (function setSize() {
-            // alert(document.documentElement.clientWidth / 16)
             var _html = document.getElementsByTagName('html')[0];
             var ch = document.documentElement.clientWidth;
 
@@ -50,7 +49,7 @@
                     </div>
                 </div>
                 <!--                page2-scroll2轮播图1--->
-                <div class="page1-scroll2" style="display: none">
+                <div class="page1-scroll2" >
                     <div class="scroll2-bg"></div>
                     <div class="scroll2-person">
                         <div class="scroll2-person-leg1"></div>
@@ -63,7 +62,7 @@
 
                 </div>
                 <!--                page3-scroll3轮播图1--->
-                <div class="page1-scroll3" style="display: none">
+                <div class="page1-scroll3" >
                     <div class="scroll3-bg"></div>
                     <div class="scroll3-person">
                         <div class="scroll3-word1"></div>
@@ -237,7 +236,6 @@
         direction: 'vertical',
         on: {
             slideChangeTransitionEnd: function () {
-                console.log(this.activeIndex);
                 $(".swiper-slide").eq(this.activeIndex).addClass('animate').siblings().removeClass("animate")
             }
         }
