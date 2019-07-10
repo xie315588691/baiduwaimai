@@ -85,16 +85,101 @@
                     <h3>这时候,</h3>
                     <p>如果有一份美味的外卖...<br>正好出现...</p>
                 </div>
+                <div class="page2-bg"></div>
+                <div class="page2-sphere"></div>
+                <div class="page2-bear">
+                    <div class="page2-bear-handl"></div>
+                    <div class="page2-bear-handr"></div>
+                    <div class="page2-bear-face1"></div>
+                    <div class="page2-bear-face2"></div>
+                </div>
+                <div class="page2-table"></div>
+                <div class="page2-food"></div>
+
             </div>
-            <div class="swiper-slide waimaiPage3">Slide 3</div>
-            <div class="swiper-slide waimaiPage4">Slide 4</div>
-            <div class="swiper-slide waimaiPage5">Slide 5</div>
-            <div class="swiper-slide waimaiPage6">Slide 6</div>
-            <div class="swiper-slide waimaiPage7">Slide 7</div>
+
+            <div class="swiper-slide waimaiPage3">
+                <div class="page3-title">
+                    <h3>这时候,</h3>
+                    <p>如果有一份美味的外卖...<br>正好出现...</p>
+                </div>
+                <div class="page3-bg"></div>
+                <div class="page3-sphere"></div>
+                <div class="page3-bear"></div>
+                <!--                3块牌子-->
+                <div class="page3-license"></div>
+                <div class="page3-oil"></div>
+                <div class="page3-evil"></div>
+            </div>
+            <div class="swiper-slide waimaiPage4">
+                <div class="page4-title">
+                    <h3>这时候,</h3>
+                    <p>如果有一份美味的外卖...<br>正好出现...</p>
+                </div>
+                <div class="page4-bg"></div>
+                <div class="page4-sphere"></div>
+                <div class="page4-bear"></div>
+                <!--                3个菜单-->
+                <div class="page4-card1"></div>
+                <div class="page4-card2"></div>
+                <div class="page4-card3"></div>
+            </div>
+            <div class="swiper-slide waimaiPage5">
+                <div class="page5-title">
+                    <h3>无论前方</h3>
+                    <p>狂风大雨还是飘雪...<br>始终坚持在路上...</p>
+                </div>
+                <div class="page5-bg"></div>
+                <div class="page5-sphere"></div>
+                <div class="page5-bear">
+                    <div class="page5-cloud"></div>
+                </div>
+            </div>
+            <div class="swiper-slide waimaiPage6">
+                <div class="page6-title">
+                    <h3>丰富的礼品</h3>
+                    <p>让你边吃边省钱...</p>
+                </div>
+                <div class="page6-bg"></div>
+                <div class="page6-sphere"></div>
+                <div class="page6-bear">
+                    <div class="bear6-gifts">
+                        <div class="bear6-gift bear6-gift1"></div>
+                        <div class="bear6-gift bear6-gift2"></div>
+                        <div class="bear6-gift bear6-gift3"></div>
+                        <div class="bear6-gift bear6-gift4"></div>
+                        <div class="bear6-gift bear6-gift5"></div>
+                        <div class="bear6-gift bear6-gift6"></div>
+                        <div class="bear6-gift bear6-gift7"></div>
+                        <div class="bear6-gift bear6-gift8"></div>
+                        <div class="bear6-gift bear6-gift9"></div>
+                        <div class="bear6-gift bear6-gift10"></div>
+                        <div class="bear6-gift bear6-gift11"></div>
+                        <div class="bear6-gift bear6-gift12"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide waimaiPage7">
+                <div class="page7-title">
+                    <h3>所有的努力</h3>
+                    <p>就是为了健康美味的食物...<br>呈现给你...</p>
+                </div>
+                <div class="page7-streelight">
+                    <div class="page7-lamplight"></div>
+                </div>
+                <div class="page7-sphere"></div>
+                <div class="page7-bear"></div>
+                <div class="page7-moto"></div>
+                <div class="page7-share"></div>
+                <div class="page7-url">
+                    baidu.waimai.com
+                </div>
+
+            </div>
         </div>
     </div>
     <!--    登陆页-->
-    <div class="baiduLoading" style="display: none">
+    <div class="baiduLoading">
         <div class="load-rider">
             <img src="./images/loading/rider1_.png" alt="">
         </div>
@@ -111,7 +196,7 @@
 
     </div>
     <!--    欢迎页-->
-    <div class="baiduWelcome" style="display: none">
+    <div class="baiduWelcome">
         <div class="wel-title">
             <img src="./images/page1/theme-title.png" alt="">
             <img src="./images/page1/hello.png" alt="">
@@ -149,18 +234,37 @@
 
 <script>
     var mySwiper = new Swiper('.swiper-container', {
-        direction: 'vertical'
+        direction: 'vertical',
+        on: {
+            slideChangeTransitionEnd: function () {
+                console.log(this.activeIndex);
+                $(".swiper-slide").eq(this.activeIndex).addClass('animate').siblings().removeClass("animate")
+            }
+        }
     })
-    $('.baiduWelcome').click(function () {
-        $(this).fadeOut();
-    })
+    // $('.baiduWelcome').click(function () {
+    //     $(this).fadeOut();
+    // })
     $(function () {
         setTimeout(function () {
             $('.baiduLoading').addClass('animate')
             $('.load-rider').on('animationend', function () {
-                $('.baiduLoading').fadeOut();
+                $('.baiduLoading').fadeOut(1000, function () {
+                    $(".baiduWelcome").addClass('animate')
+                });
             })
         }, 1000)
+
+        $(".baiduWelcome .wel-bear").longTap(function () {
+            // console.log("按了很久呢");
+            $(".baiduWelcome .wel-rider").css('animation', 'bearMove 2s ')
+            $(".baiduWelcome .wel-rider").on("animationend", function () {
+                $(".baiduWelcome").fadeOut(1000, function () {
+                    $(".waimaiPage1").addClass('animate')
+                })
+            })
+
+        })
     })
 
 </script>
