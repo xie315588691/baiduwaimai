@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./lib/swiper/dist/css/swiper.min.css">
     <link rel="stylesheet" href="./css/base.css">
-    <style>
-
-
-    </style>
     <script>
         (function setSize() {
             var _html = document.getElementsByTagName('html')[0];
@@ -49,7 +45,7 @@
                     </div>
                 </div>
                 <!--                page2-scroll2轮播图1--->
-                <div class="page1-scroll2" >
+                <div class="page1-scroll2">
                     <div class="scroll2-bg"></div>
                     <div class="scroll2-person">
                         <div class="scroll2-person-leg1"></div>
@@ -62,7 +58,7 @@
 
                 </div>
                 <!--                page3-scroll3轮播图1--->
-                <div class="page1-scroll3" >
+                <div class="page1-scroll3">
                     <div class="scroll3-bg"></div>
                     <div class="scroll3-person">
                         <div class="scroll3-word1"></div>
@@ -105,10 +101,23 @@
                 <div class="page3-bg"></div>
                 <div class="page3-sphere"></div>
                 <div class="page3-bear"></div>
+                <div class="page3-bear-box">
+                    <div class="page3-bear1"></div>
+                    <div class="page3-bear2"></div>
+                    <div class="page3-bear3"></div>
+                </div>
                 <!--                3块牌子-->
-                <div class="page3-license"></div>
-                <div class="page3-oil"></div>
-                <div class="page3-evil"></div>
+                <div class="page3-normal-card">
+                    <div class="page3-license"></div>
+                    <div class="page3-oil"></div>
+                    <div class="page3-evil"></div>
+                </div>
+                <!--                    T的牌子-->
+                <div class="page3-cards">
+                    <div class="page3-license1"></div>
+                    <div class="page3-oil1"></div>
+                    <div class="page3-evil1"></div>
+                </div>
             </div>
             <div class="swiper-slide waimaiPage4">
                 <div class="page4-title">
@@ -237,12 +246,19 @@
         on: {
             slideChangeTransitionEnd: function () {
                 $(".swiper-slide").eq(this.activeIndex).addClass('animate').siblings().removeClass("animate")
+                if (this.activeIndex == 2) {
+                    $(".swiper-slide").eq(2).addClass('swiper-no-swiping')
+                }
+                if(this.previousIndex == 2){
+                    $(".page3-bear").attr("style","")
+                    $(".page3-bear-box div").attr("style","")
+                    $(".page3-normal-card div").attr("style","")
+                    $(".page3-cards div").attr("style","")
+                }
             }
         }
     })
-    // $('.baiduWelcome').click(function () {
-    //     $(this).fadeOut();
-    // })
+
     $(function () {
         setTimeout(function () {
             $('.baiduLoading').addClass('animate')
@@ -262,6 +278,25 @@
                 })
             })
 
+        })
+
+        $(".waimaiPage3").on("click", function () {
+            var index = 0;
+            var timer = setInterval(function () {
+                $(".page3-bear").css("animation", "none");
+                console.log(index);
+                $(".page3-bear-box div").eq(index).css("opacity", "1").siblings().css("opacity", "0")
+                $(".page3-normal-card div").eq(index).css("animation", "none")
+                $(".page3-cards div").eq(index).css("opacity", "1")
+
+                index++
+                if (index == 3) {
+                    clearInterval(timer)
+                    $(".page3-cards div").css("animation","moveAndClear 1s forwards")
+                }
+            }, 1000)
+
+            $(this).removeClass("swiper-no-swiping")
         })
     })
 
