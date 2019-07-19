@@ -242,6 +242,8 @@
         </div>
 
     </div>
+    <audio src="./music/you.mp3" loop></audio>
+    <input type="button" class="mp3Play">
 </div>
 
 <script src="./lib/swiper/dist/js/swiper.min.js"></script>
@@ -268,7 +270,16 @@
             }
         }
     })
-
+    const mp3 = document.querySelector("audio")
+    document.querySelector(".mp3Play").onclick = function () {
+        if(mp3.paused){
+            mp3.play()
+            this.style.backgroundImage="url('./images/play.png')"
+        }else{
+            mp3.pause()
+            this.style.backgroundImage="url('./images/pause.png')"
+        }
+    }
     $(function () {
         setTimeout(function () {
             $('.baiduLoading').addClass('animate')

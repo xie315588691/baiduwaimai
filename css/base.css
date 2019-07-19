@@ -1704,15 +1704,16 @@ html, body {
     left: 50%;
     margin-left: -0.27rem;
     transform: rotateZ(28deg) translateY(2.6rem);
+    opacity: 0;
 }
-.bear6-gift1 img{
+.animate .bear6-gift1 img{
     width: 0.35rem;
     height: 0.29rem;
-    animation: giftRotate 1s 1s infinite;
+    animation: giftRotate 2s 1s infinite;
 }
 
-.animate .bear6-gift1 img{
-    /*animation: toNull 0.5s 2s;*/
+.animate .bear6-gift1{
+    animation: toNull 1s 1.2s infinite;
 }
 .bear6-gift2 {
     width: 0.93rem;
@@ -1728,8 +1729,8 @@ html, body {
     height: 0.79rem;
     animation: giftRotate 1s 1.2s infinite;
 }
-.animate .bear6-gift2 img{
-
+.animate .bear6-gift2{
+    animation: toNull 1s 1.4s infinite;
 }
 
 .bear6-gift3 {
@@ -2065,4 +2066,14 @@ html, body {
     }
 
 }
-
+.mp3Play{
+    width: 0.36rem;
+    height: 0.36rem;
+    background: url("../images/pause.png") center/0.36rem 0.36rem no-repeat;
+    position: absolute;
+    right: 0.32rem;
+    top: 0.32rem;
+    z-index: 1;
+    border: none;
+    outline: none;
+}
