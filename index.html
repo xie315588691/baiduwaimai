@@ -139,8 +139,18 @@
                 </div>
                 <div class="page5-bg"></div>
                 <div class="page5-sphere"></div>
-                <div class="page5-bear">
-                    <div class="page5-cloud"></div>
+                <div class="page5-bear-box">
+                    <div class="page5-bear"></div>
+                    <div class="page5-cloud">
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                        <div class="page5-snow"></div>
+                    </div>
+                    <div class="page5-smoke"></div>
                 </div>
             </div>
             <div class="swiper-slide waimaiPage6">
@@ -152,18 +162,18 @@
                 <div class="page6-sphere"></div>
                 <div class="page6-bear">
                     <div class="bear6-gifts">
-                        <div class="bear6-gift bear6-gift1"></div>
-                        <div class="bear6-gift bear6-gift2"></div>
-                        <div class="bear6-gift bear6-gift3"></div>
-                        <div class="bear6-gift bear6-gift4"></div>
-                        <div class="bear6-gift bear6-gift5"></div>
-                        <div class="bear6-gift bear6-gift6"></div>
-                        <div class="bear6-gift bear6-gift7"></div>
-                        <div class="bear6-gift bear6-gift8"></div>
-                        <div class="bear6-gift bear6-gift9"></div>
-                        <div class="bear6-gift bear6-gift10"></div>
-                        <div class="bear6-gift bear6-gift11"></div>
-                        <div class="bear6-gift bear6-gift12"></div>
+                        <div class="bear6-gift bear6-gift1"><img src="./images/page7/gift1.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift2"><img src="./images/page7/gift2.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift3"><img src="./images/page7/gift3.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift4"><img src="./images/page7/gift4.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift5"><img src="./images/page7/gift5.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift6"><img src="./images/page7/gift6.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift7"><img src="./images/page7/gift7.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift8"><img src="./images/page7/gift8.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift9"><img src="./images/page7/gift9.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift10"><img src="./images/page7/gift10.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift11"><img src="./images/page7/gift11.png" alt=""></div>
+                        <div class="bear6-gift bear6-gift12"><img src="./images/page7/gift12.png" alt=""></div>
                     </div>
                 </div>
             </div>
@@ -249,11 +259,11 @@
                 if (this.activeIndex == 2) {
                     $(".swiper-slide").eq(2).addClass('swiper-no-swiping')
                 }
-                if(this.previousIndex == 2){
-                    $(".page3-bear").attr("style","")
-                    $(".page3-bear-box div").attr("style","")
-                    $(".page3-normal-card div").attr("style","")
-                    $(".page3-cards div").attr("style","")
+                if (this.previousIndex == 2) {
+                    $(".page3-bear").attr("style", "")
+                    $(".page3-bear-box div").attr("style", "")
+                    $(".page3-normal-card div").attr("style", "")
+                    $(".page3-cards div").attr("style", "")
                 }
             }
         }
@@ -292,7 +302,7 @@
                 index++
                 if (index == 3) {
                     clearInterval(timer)
-                    $(".page3-cards div").css("animation","moveAndClear 1s forwards")
+                    $(".page3-cards div").css("animation", "moveAndClear 1s forwards")
                 }
             }, 1000)
 

@@ -1459,8 +1459,15 @@ html, body {
     position: absolute;
     bottom: 3rem;
     left: 50%;
-    transform: translateX(-2.97rem);
+    margin-left: -2.97rem;
+    transform-origin: 50% 200%;
+    transform: rotate(90deg);
 }
+
+.animate .page5-bg, .animate .page6-bg {
+    animation: page1Msg 2s 0.5s forwards;
+}
+
 
 .page5-sphere {
     width: 6.4rem;
@@ -1470,17 +1477,39 @@ html, body {
     bottom: 0;
     left: 0;
 }
-
+.page5-bear-box{
+    width: 2.3rem;
+    height: 3.9rem;
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    margin-left: -1.15rem;
+}
 .page5-bear {
     width: 2.3rem;
     height: 3.9rem;
     background: url("../images/page6/rider2.png") center/2.3rem 3.9rem no-repeat;
     position: absolute;
-    bottom: 1.75rem;
-    left: 50%;
-    transform: translateX(-1.15rem);
+    bottom: 0;
+    left: 0;
 }
 
+.animate .page5-bear{
+    animation: welRider2 0.5s infinite;;
+}
+.page5-smoke{
+    width: 1.14rem;
+    height: 0.26rem;
+    background: url("../images/page6/shadow.png") center/1.14rem 0.26rem no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -0.57rem;
+}
+
+.animate .page5-smoke{
+    animation: welJet 0.5s infinite;;
+}
 .page5-cloud {
     width: 4.32rem;
     height: 1.6rem;
@@ -1488,10 +1517,89 @@ html, body {
     position: absolute;
     top: -2.4rem;
     left: 50%;
-    transform: translateX(-2.16rem);
+    margin-left: -2.16rem;
+    transform: scale(0,0);
+}
+.animate .page5-cloud{
+        animation: nullToBig 1s forwards,leftToRight 1.5s 1s infinite;
+}
+.page5-snow{
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url("../images/page6/snow-piece.png") center/0.32rem 0.32rem no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
 }
 
-/*page6*/
+.page5-snow:nth-child(2){
+    left: calc(0.32rem*2);
+}
+.page5-snow:nth-child(3){
+    left: calc(0.32rem*4);
+}
+.page5-snow:nth-child(4){
+    left: calc(0.32rem*6);
+}
+.page5-snow:nth-child(5){
+    left: calc(0.32rem*8);
+}
+.page5-snow:nth-child(6){
+    left: calc(0.32rem*10);
+}
+.page5-snow:nth-child(7){
+    left: calc(0.32rem*12);
+}
+.animate .page5-snow:nth-child(1){
+    animation: snowRight 0.5s infinite;
+}
+.animate .page5-snow:nth-child(2){
+    animation: snowLeft 0.8s infinite;
+}
+.animate .page5-snow:nth-child(3){
+    animation: snowRight 1s infinite;
+}
+.animate .page5-snow:nth-child(4){
+    animation: snowLeft 0.5s infinite;
+}
+.animate .page5-snow:nth-child(5){
+    animation: snowLeft 1s infinite;
+}
+.animate .page5-snow:nth-child(6){
+    animation: snowRight 0.8s infinite;
+}
+.animate .page5-snow:nth-child(7){
+    animation: snowLeft 0.5s infinite;
+}
+
+@keyframes snowLeft {
+    from{
+        
+    }
+    50%{
+        opacity: 1;
+    }
+    to{
+        transform: translate(-200%,1000%);
+        opacity: 0;
+    }
+}
+
+@keyframes snowRight {
+    from{
+
+    }
+    50%{
+        opacity: 1;
+    }
+    to{
+        transform: translate(200%,1000%);
+        opacity: 0;
+    }
+}
+
+    /*page6*/
 .waimaiPage6 {
     background-color: #B626A1;
 }
@@ -1530,7 +1638,9 @@ html, body {
     position: absolute;
     bottom: 3rem;
     left: 50%;
-    transform: translateX(-2.94rem);
+    margin-left: -2.94rem;
+    transform-origin: 50% 200%;
+    transform: rotate(90deg);
 }
 
 .page6-sphere {
@@ -1549,7 +1659,7 @@ html, body {
     position: absolute;
     bottom: 2rem;
     left: 50%;
-    transform: translateX(-1.42rem);
+    margin-left: -1.42rem;
 }
 
 .bear6-gifts {
@@ -1557,84 +1667,140 @@ html, body {
     top: 0;
     left: 50%;
 }
+.bear6-gift {
+    opacity: 0;
+}
 
+.animate .bear6-gifts .bear6-gift{
+   animation: giftsNormal 2.5s 1s linear infinite;
+}
+
+@keyframes giftRotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes giftsNormal {
+    from{
+        transform: none;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes toNull {
+    to{
+        opacity: 0;
+    }
+
+}
 .bear6-gift1 {
     width: 0.35rem;
     height: 0.29rem;
-    background: url("../images/page7/gift1.png") center/0.35rem 0.29rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.27rem;
     transform: rotateZ(28deg) translateY(2.6rem);
 }
+.bear6-gift1 img{
+    width: 0.35rem;
+    height: 0.29rem;
+    animation: giftRotate 1s 1s infinite;
+}
 
+.animate .bear6-gift1 img{
+    /*animation: toNull 0.5s 2s;*/
+}
 .bear6-gift2 {
     width: 0.93rem;
     height: 0.79rem;
-    background: url("../images/page7/gift2.png") center/0.93rem 0.79rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.46rem;
     transform: rotateZ(56deg) translateY(2.4rem);
 }
+.bear6-gift2 img{
+    width: 0.93rem;
+    height: 0.79rem;
+    animation: giftRotate 1s 1.2s infinite;
+}
+.animate .bear6-gift2 img{
+
+}
 
 .bear6-gift3 {
     width: 0.72rem;
     height: 0.64rem;
-    background: url("../images/page7/gift3.png") center/0.72rem 0.64rem no-repeat;
     transform: rotateZ(84deg) translateY(2.4rem);
 }
-
+.bear6-gift3 img{
+    width: 0.72rem;
+    height: 0.64rem;
+    animation: giftRotate 1s 1.4s infinite;
+}
 .bear6-gift4 {
     width: 0.91rem;
     height: 0.73rem;
-    background: url("../images/page7/gift4.png") center/0.91rem 0.73rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.45rem;
     transform: rotateZ(112deg) translateY(2.4rem);
 }
-
+.bear6-gift4 img{
+    width: 0.91rem;
+    height: 0.73rem;
+    animation: giftRotate 1s 1.6s infinite;
+}
 .bear6-gift5 {
     width: 0.99rem;
     height: 0.65rem;
-    background: url("../images/page7/gift5.png") center/0.99rem 0.65rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.5rem;
     transform: rotateZ(140deg) translateY(2.4rem);
 }
-
+.bear6-gift5 img{
+    width: 0.99rem;
+    height: 0.65rem;
+    animation: giftRotate 1s 1.8s infinite;
+}
 .bear6-gift6 {
     width: 1.07rem;
     height: 0.8rem;
-    background: url("../images/page7/gift6.png") center/1.07em 0.8rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.53rem;
     transform: rotateZ(168deg) translateY(2.4rem);
 }
-
+.bear6-gift6 img{
+    width: 1.07rem;
+    height: 0.8rem;
+    animation: giftRotate 1s 2s infinite;
+}
 .bear6-gift7 {
     width: 1.07rem;
     height: 0.8rem;
-    background: url("../images/page7/gift7.png") center/1.07em 0.8rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.53rem;
     transform: rotateZ(196deg) translateY(2.4rem);
 }
-
+.bear6-gift7 img{
+    width: 1.07rem;
+    height: 0.8rem;
+    animation: giftRotate 1s 2.2s infinite;
+}
 .bear6-gift8 {
     width: 0.88rem;
     height: 0.64rem;
-    background: url("../images/page7/gift8.png") center/0.88rem 0.64rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
@@ -1642,51 +1808,67 @@ html, body {
     transform: rotateZ(224deg) translateY(2.4rem);
 
 }
-
+.bear6-gift8 img{
+    width: 0.88rem;
+    height: 0.64rem;
+    animation: giftRotate 1s 2.4s infinite;
+}
 .bear6-gift9 {
     width: 0.78rem;
     height: 0.5rem;
-    background: url("../images/page7/gift9.png") center/0.78rem 0.5rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.39rem;
     transform: rotateZ(252deg) translateY(2.4rem);
 }
-
+.bear6-gift9 img{
+    width: 0.78rem;
+    height: 0.5rem;
+    animation: giftRotate 1s 2.6s infinite;
+}
 .bear6-gift10 {
     width: 0.49rem;
     height: 0.37rem;
-    background: url("../images/page7/gift10.png") center/0.49rem 0.37rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.25rem;
     transform: rotateZ(280deg) translateY(2.4rem);
 }
-
+.bear6-gift10 img{
+    width: 0.49rem;
+    height: 0.37rem;
+    animation: giftRotate 1s 2.8s infinite;
+}
 .bear6-gift11 {
     width: 0.51rem;
     height: 0.31rem;
-    background: url("../images/page7/gift11.png") center/0.51rem 0.31rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.25rem;
     transform: rotateZ(308deg) translateY(2.4rem);
 }
-
+.bear6-gift11 img{
+    width: 0.51rem;
+    height: 0.31rem;
+    animation: giftRotate 1s 3s infinite;
+}
 .bear6-gift12 {
     width: 0.37rem;
     height: 0.23rem;
-    background: url("../images/page7/gift12.png") center/0.37rem 0.23rem no-repeat;
     position: absolute;
     top: 0;
     left: 50%;
     margin-left: -0.18rem;
     transform: rotateZ(336deg) translateY(2.4rem);
 }
-
+.bear6-gift12 img{
+    width: 0.37rem;
+    height: 0.23rem;
+    animation: giftRotate 1s 3.2s infinite;
+}
 
 /*page7*/
 .waimaiPage7 {
@@ -1813,6 +1995,25 @@ html, body {
     }
 
 }
+/*左右抖动*/
+@keyframes leftToRight {
+    from {
+        transform: translate(2%, 0);
+    }
+    25% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(2%, 0);
+    }
+    75% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(2%, 0);
+    }
+
+}
 
 @keyframes page1Scroll3 {
     0% {
@@ -1864,3 +2065,4 @@ html, body {
     }
 
 }
+
